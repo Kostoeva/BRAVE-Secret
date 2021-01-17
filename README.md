@@ -5,7 +5,7 @@
 <table border="0">
  <tr>
     <td><img src="https://github.com/Kostoeva/BRAVE-Secret/blob/main/logo/brave-logo-full.png"></td>
-    <td>BRAVE strives to introduce time tested medical rehabilitation exercies to groundbreaking VR technology. The idea behind the exploration of Brain Rehabilitation in a Virtual Environment is to fashion a personalized, adaptable, independent, and entertaining rehabilitation plan.</td>
+    <td>BRAVE strives to introduce time tested medical rehabilitation exercises to groundbreaking VR technology. The idea behind the exploration of Brain Rehabilitation in a Virtual Environment is to fashion a personalized, adaptable, independent, and entertaining rehabilitation plan.</td>
  </tr>
 </table>
 
