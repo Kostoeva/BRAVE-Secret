@@ -10,3 +10,21 @@
 </table>
 
 If you are interested in contributing, feel free to shoot me an email!
+
+Fall 2020 Updates:
+
+Chi: 
+- Owning the "Spotting the Difference" exercise
+- [Architecture/Meeting Notes for Fall 2020](https://docs.google.com/document/d/1N5CEAmnLQ7t3asLauTCmrlt8Dgzc5zkTzXlZ1RoHOQI/edit?usp=sharing)
+
+![changeTextures script](https://github.com/Kostoeva/BRAVE-Secret/blob/main/images/chi-code-0.png)
+
+![spawner script](https://github.com/Kostoeva/BRAVE-Secret/blob/main/images/chi-code-1.png)
+
+![gridManager script](https://github.com/Kostoeva/BRAVE-Secret/blob/main/images/chi-code-2.png)
+
+![mid-update](https://github.com/Kostoeva/BRAVE-Secret/blob/main/images/chi-mid-update.jpg)
+
+Varun:
+- Owning the Targets exercise
+- [Architecture/Meeting Notes for Fall 2020](https://docs.google.com/document/d/12_zA4_TD40IqTEzf6m2ecTe0sLbQgFWGruY144aYynY/edit?usp=sharing)
