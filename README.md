@@ -21,7 +21,7 @@ Chi:
 
 ![spawner script](https://github.com/Kostoeva/BRAVE-Secret/blob/main/images/chi-code-1.png)
 
-![gridManager script](https://github.com/Kostoeva/BRAVE-Secret/blob/main/images/chi-code-2.png)
+![gridManager script](https://github.com/Kostoeva/BRAVE-Secret/blob/main/images/chi-code-3.png)
 
 ![mid-update](https://github.com/Kostoeva/BRAVE-Secret/blob/main/images/chi-mid-update.jpg)
 
