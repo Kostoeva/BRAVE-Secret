@@ -16,6 +16,7 @@ Fall 2020 Updates:
 Chi: 
 - Owning the "Spotting the Difference" exercise
 - [Architecture/Meeting Notes for Fall 2020](https://docs.google.com/document/d/1N5CEAmnLQ7t3asLauTCmrlt8Dgzc5zkTzXlZ1RoHOQI/edit?usp=sharing)
+- https://github.com/hhphngchi/SpotTheDifference/blob/main/GridManager.cs
 
 ![changeTextures script](https://github.com/Kostoeva/BRAVE-Secret/blob/main/images/chi-code-0.png)
 
