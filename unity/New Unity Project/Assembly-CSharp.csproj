@@ -347,10 +347,12 @@
     <Compile Include="Assets\Oculus\Spatializer\scripts\ONSPVersion.cs" />
     <Compile Include="Assets\Oculus\Spatializer\scripts\OculusSpatializerUnity.cs" />
     <Compile Include="Assets\Oculus\Spatializer\scripts\helpers\ONSPReflectionZone.cs" />
+    <Compile Include="Assets\Scripts\ButtonControl.cs" />
     <Compile Include="Assets\Scripts\CardInfomation.cs" />
     <Compile Include="Assets\Scripts\EventManager.cs" />
     <Compile Include="Assets\Scripts\EventManagerDichoticListening.cs" />
     <Compile Include="Assets\Scripts\GameObstacle.cs" />
+    <Compile Include="Assets\Scripts\JoystickControl.cs" />
     <Compile Include="Assets\Scripts\NumberAudio.cs" />
     <Compile Include="Assets\Scripts\Obstacle.cs" />
     <Compile Include="Assets\Scripts\PlayerController_Peter.cs" />
