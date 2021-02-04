@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class EventManagerDichoticListening : MonoBehaviour
 {
@@ -9,7 +8,6 @@ public class EventManagerDichoticListening : MonoBehaviour
     public OVRCameraRig Player;
     public GameObject speaker1;
     public GameObject speaker2;
-    // TODO: Add levels
     public GameObject lv1;
     public GameObject lv2;
     public GameObject lv3;
@@ -48,13 +46,13 @@ public class EventManagerDichoticListening : MonoBehaviour
     {
         if (gameEnds) {
             speaker1.SetActive(false);
-            StartCoroutine(Exit());
+            //StartCoroutine(Result());
         }
     }
     
-    IEnumerator Exit()
+    IEnumerator Result()
     {
-        yield return new WaitForSeconds(5);
-        SceneManager.LoadScene("BRAVE");
+        //show'em the result!
+        yield return new WaitForSeconds(0) ;
     }
 }

@@ -64,11 +64,39 @@ public class EventManager : MonoBehaviour
      */ 
     public void Start()
     {
-        if (!club && !diamond && !heart && !spades)
+        chooseRandomSuitForGame2();
+
+        /*if (!club && !diamond && !heart && !spades)
+        {
+            club = true;
+        }*/
+    }
+
+    private void chooseRandomSuitForGame2()
+    {
+        diamond = false;
+        heart = false;
+        spades = false;
+        club = false;
+
+        int randomSuitSelector = UnityEngine.Random.Range(0, 3);
+        Debug.Log(randomSuitSelector);
+        if (randomSuitSelector == 0)
         {
             club = true;
         }
-        
+        else if (randomSuitSelector == 1)
+        {
+            diamond = true;
+        }
+        else if (randomSuitSelector == 2)
+        {
+            heart = true;
+        }
+        else
+        {
+            spades = true;
+        }
     }
 
     #region Private Variables
@@ -178,9 +206,9 @@ public class EventManager : MonoBehaviour
      * Input; NULL
      * Output: corotine funtion
      * */
-    private IEnumerator showOriginalCards1(int remember_time = 2, int show_time = 3)
+    private IEnumerator showOriginalCards1(int remember_time = 2, int show_time = 5)
     {
-        msg.text = "Try to remeber the following cards in 3 seconds";
+        msg.text = "Try to remeber the following cards in 5 seconds";
         yield return new WaitForSeconds(remember_time);
         test_Original = generateOriginalCards();
         test_Or = spawn_originalCards(test_Original);
@@ -236,6 +264,7 @@ public class EventManager : MonoBehaviour
      * */
     private void startgame2()
     {
+        chooseRandomSuitForGame2();
         game = 2;
         selected = new LinkedList<int>();
         disable_inable_StartButton();
@@ -251,9 +280,9 @@ public class EventManager : MonoBehaviour
      * Input; NULL
      * Output: corotine funtion
      * */
-    private IEnumerator showOriginalCards3(int remember_time = 2, int show_time = 3)
+    private IEnumerator showOriginalCards3(int remember_time = 2, int show_time = 5)
     {
-        msg.text = "Try to remember the following cards in 3 seconds";
+        msg.text = "Try to remember the order of these cards in 5 seconds";
         yield return new WaitForSeconds(remember_time);
         test_Original = generateOriginalCards();
         test_Or = spawn_game3(test_Original);
@@ -525,6 +554,8 @@ public class EventManager : MonoBehaviour
                 a.AddComponent<CardInfomation>();
                 a.GetComponent<CardInfomation>().id = r[i * m_Width + j] - 1;
                 a.tag = "Card";
+                Debug.Log("Card id is");
+                Debug.Log(r[i * m_Width + j] - 1);
                 result[i * m_Width + j] = a;
             }
         }
@@ -599,7 +630,7 @@ public class EventManager : MonoBehaviour
 
     private void SetCardScale_game3()
     {
-        card_width = 1.27f;
+        card_width = 1.5f;
         card_height = 1.8f;
         width_space = 0.5f;
         height_space = 0.5f;
@@ -611,7 +642,7 @@ public class EventManager : MonoBehaviour
         {
             width_index = 0.5f;
         }
-        card_width *= width_index;
+        card_width *= width_index - 0.4f;
         width_space *= width_index;
         float curHei = m_Height * card_height + (m_Height - 1) * height_space;
         height_index = 1.6f / curHei;
@@ -662,7 +693,7 @@ public class EventManager : MonoBehaviour
 
     /* Check if the player select correct card in game1
      * Input: NULL
-     * Output: bool, true for selectin all cards correctly, false for failed tempt
+     * Output: bool, true for selectin all cards correctly, false for failed attempt
      */
     private bool checkSuccess()
     {
@@ -725,6 +756,7 @@ public class EventManager : MonoBehaviour
                 }
             }
         }
+        msg += " If none displayed, submit none as selected.";
         return msg;
     } 
 
@@ -734,18 +766,22 @@ public class EventManager : MonoBehaviour
      */
     private bool checkSuccess21(int card)
     {
-        Debug.Log("CheckSuccess21, "+card);
-        if (card <= 12 &&club)
+        Debug.Log("CheckSuccess21, " + card);
+        if (card <= 12 && club)
         {
+            Debug.Log("club");
             return true;
-        } else if (card <= 25 && diamond)
+        } else if (card > 12 && card <= 25 && diamond)
         {
+            Debug.Log("diamond");
             return true;
-        } else if (card <= 38 && heart)
+        } else if (card > 25 && card <= 38 && heart)
         {
+            Debug.Log("heart");
             return true;
-        } else if (card <= 51 && spades)
+        } else if (card > 38 && card <= 51 && spades)
         {
+            Debug.Log("spades");
             return true;
         }
         return false;
@@ -762,10 +798,19 @@ public class EventManager : MonoBehaviour
             //Debug.Log("Length" + original_cards.Length);
             //Debug.Log("Checking"+i);
             int temp = original_cards[i].GetComponent<CardInfomation>().id;
+            
+
             if (checkSuccess21(temp))
             {
+                foreach (var x in selected)
+                {
+                    Debug.Log("SELECTED CARD ");
+                    Debug.Log(x);
+                }
                 if (!selected.Contains(temp))
                 {
+                    
+                    Debug.Log("^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^");
                     return false;
                 }
                 result[0] += 1;
@@ -788,7 +833,7 @@ public class EventManager : MonoBehaviour
             
             for (int i = 0; i < original_cards.Length; i++)
             {
-                Debug.Log("Destroying"+i);
+                //Debug.Log("Destroying"+i);
                 Destroy(original_cards[i]);
             }
         }
@@ -844,7 +889,7 @@ public class EventManager : MonoBehaviour
         if (selected.Count != num_Orig)
         {
             game1_record[0] += 1;
-            msg.text = "Failed tempt: select wrong number of cards";
+            msg.text = "Failed attempt: select wrong number of cards";
         } else {
             bool success = checkSuccess();
             if (success)
@@ -854,7 +899,7 @@ public class EventManager : MonoBehaviour
             }
             else
             {
-                msg.text = "Failed temp: wrong cards selected";
+                msg.text = "Failed attempt: wrong cards selected";
                 game1_record[0] += 1;
             }
         }
@@ -864,20 +909,21 @@ public class EventManager : MonoBehaviour
 
     /* The real submit function for game2: 
      * 1. Enable the start buttons and disable the submit button (for collider)
-     * 2. See if the player's attemp is succssful
+     * 2. See if the player's attemp is succeessful
      * 3. Update the record for game 2
      * Input: NULL
      * Output: void
      */
     private void submit2()
     {
+        Debug.Log("----------------------------------in submit2");
         disable_inbale_SubmitButton();
         int[] result = new int[1];
         result[0] = 0;
         bool s_temp = checkSuccess22(result);
         if (s_temp == false)
         {
-            msg.text = "Failed temp";
+            msg.text = "Failed attempt";
             game2_record[0] += 1;
             destroyCard();
             return;
@@ -888,7 +934,7 @@ public class EventManager : MonoBehaviour
             game2_record[1] += 1;
         } else
         {
-            msg.text = "Failed temp";
+            msg.text = "Failed attempt";
             game2_record[0] += 1;
         }
        
@@ -909,7 +955,7 @@ public class EventManager : MonoBehaviour
         int index = 0;
         if (selected.Count!=num_Orig)
         {
-            msg.text = "Failed temp";
+            msg.text = "Failed attempt";
             game3_record[0] += 1;
             destroyCard();
             return;
@@ -924,7 +970,7 @@ public class EventManager : MonoBehaviour
             if (temp[i] != test_Original[num_Orig - i - 1] - 1) {
                 Debug.Log(temp[i]);
                 Debug.Log(test_Original[num_Orig - i - 1]);
-                msg.text = "Failed temp";
+                msg.text = "Failed attempt";
                 game3_record[0] += 1;
                 destroyCard();
                 return;

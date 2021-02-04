@@ -35,9 +35,8 @@ public class PlayerController_Peter : MonoBehaviour
         RaycastHit hitInfo;
 
         //TODO: Left Controller
-        float x_position = OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTrackedRemote).x * 10;
-        Debug.Log(x_position);
-        float y_position = OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTrackedRemote).y * 20;
+        float x_position = OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTrackedRemote).x - 0.5f;
+        float y_position = OVRInput.GetLocalControllerPosition(OVRInput.Controller.RTrackedRemote).y  + 5.0f;
         transform.position = new Vector3(x_position, y_position + 2f, transform.position.z);
         transform.rotation = OVRInput.GetLocalControllerRotation(OVRInput.Controller.RTrackedRemote);
 
