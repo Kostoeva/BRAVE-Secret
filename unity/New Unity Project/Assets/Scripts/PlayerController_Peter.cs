@@ -7,7 +7,7 @@ public class PlayerController_Peter : MonoBehaviour
 {
 
     [SerializeField]
-    private EventManager m_eventManager;
+    private EventManagerWOME m_eventManager;
 
     //The selected cards in game3
     private GameObject[] game3;

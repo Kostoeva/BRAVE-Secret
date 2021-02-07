@@ -23,7 +23,7 @@ public class GameObstacle : MonoBehaviour, Obstacle
     {
         if (game != null)
         {
-            m_gamestate = game.GetComponent<EventManager>().game_record();
+            m_gamestate = game.GetComponent<EventManagerWOME>().game_record();
         }
         return m_gamestate;
     }

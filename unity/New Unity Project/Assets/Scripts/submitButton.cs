@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class submitButton : MonoBehaviour
 {
 
-    public EventManager m_EventManager;
+    public EventManagerWOME m_EventManager;
 
     public GameObject child;
 
