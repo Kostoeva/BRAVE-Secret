@@ -387,7 +387,7 @@ MonoBehaviour:
   topOfJoystick: {fileID: 1450327674}
   exerciseImages:
   - {fileID: 2800000, guid: 91f20d34e6c81894c8dcbc2d59a784f0, type: 3}
-  - {fileID: 2800000, guid: 91f20d34e6c81894c8dcbc2d59a784f0, type: 3}
+  - {fileID: 2800000, guid: cf4cf6588c848a6419c2eba24ac715f0, type: 3}
   - {fileID: 2800000, guid: 91f20d34e6c81894c8dcbc2d59a784f0, type: 3}
 --- !u!54 &397600137
 Rigidbody:

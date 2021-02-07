@@ -34,7 +34,7 @@ public class ButtonControl : MonoBehaviour
             buttonPressed = false;
             on = !on;
 
-            button.transform.position = new Vector3(button.transform.position.x, button.transform.position.y - 0.05f, button.transform.position.z);
+            button.transform.position = new Vector3(button.transform.position.x, button.transform.position.y - 0.04f, button.transform.position.z);
 
             if (on)
             {
