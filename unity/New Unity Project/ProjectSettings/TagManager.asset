@@ -12,6 +12,8 @@ TagManager:
   - Submit
   - EventManager
   - Card
+  - Fire
+  - Star
   layers:
   - Default
   - TransparentFX

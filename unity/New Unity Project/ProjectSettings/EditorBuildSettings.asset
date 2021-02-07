@@ -11,10 +11,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scene1.unity
     guid: ba6675dc62a4711428a02911bede83ed
-  - enabled: 1
+  - enabled: 0
     path: Assets/DLT.unity
     guid: 9510974f7c2039443956a9158e1cc334
   - enabled: 1
     path: Assets/Scenes/WOME.unity
     guid: 4258858aabcc4fb4dbae8fe171b7a3d2
+  - enabled: 1
+    path: Assets/Scenes/orderedPath.unity
+    guid: d261904d60b4842f48fa7631aab80c5b
+  - enabled: 1
+    path: Assets/Scenes/DLT.unity
+    guid: c41b570734a8495499dfe03063faed0e
   m_configObjects: {}
